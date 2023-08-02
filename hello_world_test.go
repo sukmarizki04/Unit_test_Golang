@@ -5,19 +5,23 @@ import (
 	"testing"
 )
 
-func TestHelloWorld(t *testing.T) {
+func TestHelloWorldAdi(t *testing.T) {
 	uji := HelloWorld(" Sukma")
 
 	if uji != "Hello Sukma" {
-		fmt.Println("Tes Sukses")
-		panic("HASIL TIDAK SESUAI")
+		//error dan melanjutkan kebawah
+		t.Error("Harusnya : He Sukma")
 	}
+	fmt.Println("Dieksekusi")
 }
 
 func TestHelloWorldSukma(t *testing.T) {
-	uji := HelloWorld("Sukma")
+	uji := HelloWorld(" Sukma")
 
 	if uji != "Hello Sukma" {
-		panic("HASIL TIDAK SESUAI")
+		//sedangkan testfailnow akan berhenti ketika menemukan function FailNow
+		t.FailNow()
 	}
+
+	fmt.Println("TestHelloWorldSukma Done")
 }

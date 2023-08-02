@@ -1,6 +1,9 @@
 package helper
 
-import "testing"
+import (
+	"fmt"
+	"testing"
+)
 
 var (
 	kubus              Kubus   = Kubus{4}
@@ -14,5 +17,13 @@ func TestHitungVolume(t *testing.T) {
 
 	if kubus.Volume() != volumeSeharusnya {
 		panic("Salah harusnya %2.f")
+	}
+}
+
+func TestHitungLuas(t *testing.T) {
+	t.Logf("Luast : %2.f", kubus.Luas())
+
+	if kubus.Keliling() != kubus.Volume() {
+		fmt.Printf("Thats True")
 	}
 }
